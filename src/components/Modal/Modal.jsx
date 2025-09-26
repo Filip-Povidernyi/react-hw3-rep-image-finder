@@ -19,10 +19,14 @@ class Modal extends Component {
     };
 
     componentDidMount() {
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
         window.addEventListener('keyup', this.onPressEsc);
     };
 
     componentWillUnmount() {
+        document.body.style.overflow = "auto";
+        document.documentElement.style.overflow = "auto";
         window.removeEventListener('keyup', this.onPressEsc);
     };
 
